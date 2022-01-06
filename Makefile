@@ -99,12 +99,12 @@ ARV = ar -rcs
 all : $(LIB)
 $(LIB) : $(OBJS)
 	${ARV} $(LIB) $(OBJS)
-		cc ${CFLAGS} push_swap.c ${LIB} -o push_swap
+		@cc ${CFLAGS} push_swap.c ${LIB} -o push_swap
 
 bonus : $(CHECKER_LIB)
 $(CHECKER_LIB) : $(CHECKER_OBJS)
 	$(ARV) ${CHECKER_LIB} $(CHECKER_OBJS)
-		cc ${CFLAGS} ./checker_utils/ft_checker_main.c ${CHECKER_LIB} -o checker
+		@cc ${CFLAGS} ./checker_utils/ft_checker_main.c ${CHECKER_LIB} -o checker
 
 clean :
 	${REM} ${OBJS}
@@ -114,6 +114,6 @@ fclean : clean
 	${REM} ${LIB} push_swap
 	${REM} ${CHECKER_LIB} checker
 
-re : fclean all bonus
+re : fclean all
 
 .PHONY : all clean fclean re bonus

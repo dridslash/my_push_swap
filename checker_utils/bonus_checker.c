@@ -82,7 +82,7 @@ void	ft_checker(t_node **head_ref_a, t_node **head_ref_b)
 		free(act);
 		act = get_next_line(0);
 	}
-	if (ft_check_if_sorted((*head_ref_a)) > 0)
+	if (ft_check_if_sorted((*head_ref_a)) > 0 && list_size((*head_ref_b)) == 0)
 	{
 		write(1, "OK\n", 4);
 	}
