@@ -18,7 +18,6 @@ ft_less.c \
 ft_LiLHak_sort.c \
 ft_list_size.c \
 ft_lstlast.c \
-ft_printlist.c \
 ft_push.c \
 ft_push_a.c \
 ft_push_b.c \
