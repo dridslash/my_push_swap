@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit_imp.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/20 20:03:31 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/06 14:30:26 by mnaqqad          ###   ########.fr       */
+/*   Updated: 2022/01/09 01:51:21 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 int	ft_isdigit_imp(char *arg)
 {
 	int	i;
-	int	j;
+	// int	j;
 
 	i = 0;
-	j = 0;
+	// j = 0;
 	while (arg[i])
 	{
 		if ((arg[i] >= 48 && arg[i] <= 57) || arg[i] == '-' || arg[i] == '+')

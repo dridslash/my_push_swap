@@ -1,26 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_push_prev.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 11:18:12 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/09 12:49:50 by marvin           ###   ########.fr       */
+/*   Created: 2021/12/21 11:16:50 by mnaqqad           #+#    #+#             */
+/*   Updated: 2021/12/21 11:17:03 by mnaqqad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_list(t_node **head_ref)
+void push_prev(node *prev_node,int x)
 {
-	t_node	*tmp;
-
-	while (*head_ref)
-	{
-		tmp = (*head_ref);
-		*head_ref = (*head_ref)->next;
-		free(tmp);
-	}
-	(*head_ref) = NULL;
+	node *n=(node*)malloc(sizeof(node));
+	n->data=x;
+	n->next=prev_node->next;
+	prev_node->next=n;
 }

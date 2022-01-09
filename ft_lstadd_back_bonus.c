@@ -1,26 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 11:18:12 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/09 12:49:50 by marvin           ###   ########.fr       */
+/*   Created: 2021/11/14 09:15:27 by mnaqqad           #+#    #+#             */
+/*   Updated: 2021/12/18 19:49:46 by mnaqqad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_list(t_node **head_ref)
+void	ft_lstadd_back(node **lst, node *new)
 {
-	t_node	*tmp;
+	node	*head;
 
-	while (*head_ref)
+	head = NULL;
+	if ((*lst) == NULL)
 	{
-		tmp = (*head_ref);
-		*head_ref = (*head_ref)->next;
-		free(tmp);
+		(*lst) = new;
 	}
-	(*head_ref) = NULL;
+	else
+	{
+		head = *lst;
+		while (head->next)
+		head = head->next;
+		head->next = new;
+	}
 }

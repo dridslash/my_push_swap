@@ -1,26 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 11:18:12 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/09 12:49:50 by marvin           ###   ########.fr       */
+/*   Created: 2021/11/13 17:47:49 by mnaqqad           #+#    #+#             */
+/*   Updated: 2021/12/18 19:47:34 by mnaqqad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_list(t_node **head_ref)
+int	ft_lstsize(node *lst)
 {
-	t_node	*tmp;
+	int	i;
 
-	while (*head_ref)
+	i = 0;
+	if (lst)
 	{
-		tmp = (*head_ref);
-		*head_ref = (*head_ref)->next;
-		free(tmp);
+		while (lst)
+		{
+			i++;
+			lst = lst->next;
+		}
 	}
-	(*head_ref) = NULL;
+	return (i);
 }

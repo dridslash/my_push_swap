@@ -1,26 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_printlist.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 11:18:12 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/09 12:49:50 by marvin           ###   ########.fr       */
+/*   Created: 2021/12/21 11:14:56 by mnaqqad           #+#    #+#             */
+/*   Updated: 2021/12/21 11:15:13 by mnaqqad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_list(t_node **head_ref)
+void printlist(node *head)
 {
-	t_node	*tmp;
-
-	while (*head_ref)
+	node *tmp= head;
+	while(tmp != NULL)
 	{
-		tmp = (*head_ref);
-		*head_ref = (*head_ref)->next;
-		free(tmp);
+		printf("%d\n",tmp->data);
+		tmp = tmp->next;
 	}
-	(*head_ref) = NULL;
 }

@@ -1,6 +1,6 @@
 CC = cc -c
 
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS =  -Wall -Werror -Wextra
 
 SRCS = push_swap.c \
 ft_atoi.c \

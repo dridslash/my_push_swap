@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_free_list.c                                     :+:      :+:    :+:   */
+/*   ft_find_node.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/12/21 11:18:12 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/09 12:49:50 by marvin           ###   ########.fr       */
+/*   Created: 2021/12/21 11:17:17 by mnaqqad           #+#    #+#             */
+/*   Updated: 2021/12/21 11:17:29 by mnaqqad          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	free_list(t_node **head_ref)
+node *find_node(node **head_ref,int x)
 {
-	t_node	*tmp;
-
-	while (*head_ref)
+	node *tmp=(*head_ref);
+	while(tmp != NULL)
 	{
-		tmp = (*head_ref);
-		*head_ref = (*head_ref)->next;
-		free(tmp);
+		if(tmp ->data == x)
+		{
+			return tmp;
+		}
+		tmp = tmp->next;
 	}
-	(*head_ref) = NULL;
+	return (NULL);
 }

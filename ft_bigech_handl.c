@@ -33,7 +33,9 @@ void	bigech_handl(t_node **head_ref_a, t_node **head_ref_b)
 		}
 		tmp = (*head_ref_a);
 		if (tmp ->data < max && tmp->data < 2)
+		{
 			ft_push_b(head_ref_a, head_ref_b);
+		}
 			i++;
 	}
 }

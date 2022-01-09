@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_radix.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/22 11:04:06 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/05 19:41:11 by mnaqqad          ###   ########.fr       */
+/*   Updated: 2022/01/09 02:07:18 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,9 @@ void	ft_radix(t_node **head_ref_a, t_node **head_ref_b)
 			if ((((tmp->data) >> i) & 1) == 1)
 				ft_rotate_a(head_ref_a);
 			else if (ft_check_if_sorted(tmp) == 0)
+			{
 				ft_push_b(head_ref_a, head_ref_b);
+			}
 				index++;
 		}
 		send_to_a(head_ref_a, head_ref_b);

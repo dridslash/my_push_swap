@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_a.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 19:24:25 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/05 18:41:10 by mnaqqad          ###   ########.fr       */
+/*   Updated: 2022/01/09 12:59:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,13 @@
 
 void	ft_push_a(t_node **head_ref_a, t_node **head_ref_b)
 {
+	t_node	*tmp;
 	if ((*head_ref_b) != NULL)
 	{
+		tmp = (*head_ref_b);
 		push(head_ref_a, (*head_ref_b)->data);
 		(*head_ref_b) = (*head_ref_b)->next;
+		free(tmp);
 		write(1, "pa\n", 3);
 	}
 }

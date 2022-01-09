@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_back.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mnaqqad <mnaqqad@student.42.fr>            +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/21 11:16:17 by mnaqqad           #+#    #+#             */
-/*   Updated: 2022/01/05 18:40:54 by mnaqqad          ###   ########.fr       */
+/*   Updated: 2022/01/09 12:53:30 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,12 @@ void	push_back(t_node **head_ref, int x)
 	t_node	*tmp;
 
 	n = (t_node *)malloc(sizeof(t_node));
+	if (!n)
+	{
+		free(n);
+		n = NULL;
+		return;
+	}
 	n->data = x;
 	if ((*head_ref) == NULL)
 	{
@@ -26,9 +32,7 @@ void	push_back(t_node **head_ref, int x)
 	}
 	else
 	{
-		tmp = (*head_ref);
-		while (tmp->next != NULL)
-			tmp = tmp->next;
+		tmp = ft_lstlast((*head_ref));
 		tmp->next = n;
 		n ->next = NULL;
 	}
